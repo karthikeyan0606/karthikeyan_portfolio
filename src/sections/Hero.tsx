@@ -91,7 +91,7 @@ export default function Hero() {
             <Magnetic>
               <a
                 href={import.meta.env.BASE_URL + profile.resumeUrl}
-                download
+                download="Karthikeyan_Resume.pdf"
                 data-cursor-hover
                 className="flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-mono text-sm text-white transition hover:border-primary hover:text-primary"
               >
