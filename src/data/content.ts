@@ -13,7 +13,7 @@ export const profile = {
   phone: "+91 63858 97474",
   github: "https://github.com/Karthikeyan7474",
   linkedin: "https://www.linkedin.com/in/karthikeyan-k-27a246252",
-resumeUrl: "resume.pdf",
+  resumeUrl: "/resume.pdf",
 };
 
 export const stats = [
@@ -39,6 +39,21 @@ export const skillCategories: SkillCategory[] = [
   { title: "Core Stack", skills: ["Flutter", "Dart", "Java", "Vert.x", "Node.js", "PostgreSQL"] },
   { title: "AI / RAG", skills: ["Retrieval-Augmented Generation", "Vector Search", "Prompt Engineering"] },
   { title: "Currently Learning", skills: ["Express.js", "React", "TypeScript"] },
+];
+
+export const techStack = [
+  { name: "Flutter", icon: "SiFlutter", iconSet: "si" },
+  { name: "Dart", icon: "SiDart", iconSet: "si" },
+  { name: "Java", icon: "SiOpenjdk", iconSet: "si" },
+  { name: "Vert.x", icon: "FiZap", iconSet: "fi" },
+  { name: "Node.js", icon: "SiNodedotjs", iconSet: "si" },
+  { name: "PostgreSQL", icon: "SiPostgresql", iconSet: "si" },
+  { name: "RAG", icon: "FiSearch", iconSet: "fi" },
+  { name: "Vector Search", icon: "FiGrid", iconSet: "fi" },
+  { name: "Prompt Engineering", icon: "FiTerminal", iconSet: "fi" },
+  { name: "Express.js", icon: "SiExpress", iconSet: "si" },
+  { name: "React", icon: "SiReact", iconSet: "si" },
+  { name: "TypeScript", icon: "SiTypescript", iconSet: "si" },
 ];
 
 export type Project = {

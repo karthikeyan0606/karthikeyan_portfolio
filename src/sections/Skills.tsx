@@ -1,5 +1,32 @@
+import {
+  SiFlutter,
+  SiDart,
+  SiOpenjdk,
+  SiNodedotjs,
+  SiPostgresql,
+  SiExpress,
+  SiReact,
+  SiTypescript,
+} from "react-icons/si";
+import { FiZap, FiSearch, FiGrid, FiTerminal } from "react-icons/fi";
+import type { IconType } from "react-icons";
 import Reveal from "../components/Reveal";
-import { skillCategories } from "../data/content";
+import { skillCategories, techStack } from "../data/content";
+
+const ICONS: Record<string, IconType> = {
+  SiFlutter,
+  SiDart,
+  SiOpenjdk,
+  SiNodedotjs,
+  SiPostgresql,
+  SiExpress,
+  SiReact,
+  SiTypescript,
+  FiZap,
+  FiSearch,
+  FiGrid,
+  FiTerminal,
+};
 
 export default function Skills() {
   return (
@@ -12,24 +39,52 @@ export default function Skills() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {skillCategories.map((cat, i) => (
-            <Reveal key={cat.title} delay={i * 0.06}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card/60 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/40">
-                <h3 className="font-display text-lg font-semibold text-white">{cat.title}</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {cat.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs text-muted transition group-hover:border-primary/30 group-hover:text-white"
-                    >
-                      {skill}
+        <Reveal delay={0.1}>
+          <div className="relative mt-14 overflow-hidden rounded-3xl border border-border">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 -z-10 h-full w-full object-cover"
+              src={`${import.meta.env.BASE_URL}videos/tech-bg.mp4`}
+            />
+            <div className="absolute inset-0 -z-10 bg-bg/80" />
+
+            <div className="grid grid-cols-3 gap-3 p-6 sm:grid-cols-4 sm:gap-4 sm:p-8 md:grid-cols-6">
+              {techStack.map((t) => {
+                const Icon = ICONS[t.icon];
+                return (
+                  <div
+                    key={t.name}
+                    className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/[0.06]"
+                  >
+                    {Icon && (
+                      <Icon className="h-8 w-8 text-white/40 grayscale transition duration-300 group-hover:text-primary group-hover:grayscale-0" />
+                    )}
+                    <span className="font-mono text-[11px] text-muted transition group-hover:text-white">
+                      {t.name}
                     </span>
-                  ))}
-                </div>
-                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/0 blur-2xl transition group-hover:bg-primary/10" />
-              </div>
-            </Reveal>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-3 sm:grid-cols-3">
+          {skillCategories.map((cat) => (
+            <div
+              key={cat.title}
+              className="rounded-xl border border-border bg-card/40 p-4"
+            >
+              <p className="font-mono text-xs uppercase tracking-widest text-primary">
+                {cat.title}
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                {cat.skills.join(" · ")}
+              </p>
+            </div>
           ))}
         </div>
       </div>
