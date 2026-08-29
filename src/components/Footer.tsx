@@ -10,13 +10,32 @@ export default function Footer() {
         </span>
 
         <div className="flex items-center gap-5 text-lg text-muted">
-          <a href={profile.github} target="_blank" rel="noreferrer" data-cursor-hover aria-label="GitHub" className="hover:text-primary">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            data-cursor-hover
+            aria-label="GitHub"
+            className="hover:text-primary"
+          >
             <FiGithub />
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" data-cursor-hover aria-label="LinkedIn" className="hover:text-primary">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            data-cursor-hover
+            aria-label="LinkedIn"
+            className="hover:text-primary"
+          >
             <FiLinkedin />
           </a>
-          <a href={`mailto:${profile.email}`} data-cursor-hover aria-label="Email" className="hover:text-primary">
+          <a
+            href={`mailto:${profile.email}`}
+            data-cursor-hover
+            aria-label="Email"
+            className="hover:text-primary"
+          >
             <FiMail />
           </a>
         </div>
@@ -30,7 +49,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="mt-6 text-center font-mono text-xs text-muted/70">
-        © {new Date().getFullYear()} {profile.name}. Built with React, TypeScript &amp; Framer Motion.
+        © {new Date().getFullYear()} {profile.name}. All Rights Reserved.
       </p>
     </footer>
   );
