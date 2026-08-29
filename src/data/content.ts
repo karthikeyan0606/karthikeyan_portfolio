@@ -13,7 +13,7 @@ export const profile = {
   phone: "+91 63858 97474",
   github: "https://github.com/Karthikeyan7474",
   linkedin: "https://www.linkedin.com/in/karthikeyan-k-27a246252",
-  resumeUrl: "resume.pdf",
+  resumeUrl: "karthikeyan_resume.pdf",
 };
 
 export const stats = [
