@@ -4,13 +4,25 @@ import { useTypewriter } from "../hooks/useTypewriter";
 import { profile } from "../data/content";
 import Magnetic from "../components/Magnetic";
 
-const TECH = ["Java", "Vert.js", "React", "Flutter", "PostgreSQL", "Gemini", "Kong", "Azure"];
+const TECH = [
+  "Java",
+  "Vert.js",
+  "React",
+  "Flutter",
+  "PostgreSQL",
+  "Gemini",
+  "Kong",
+  "Azure",
+];
 
 export default function Hero() {
   const role = useTypewriter(profile.roles);
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center px-6 pt-24">
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center px-6 pt-24"
+    >
       <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
         <div>
           <motion.div
@@ -38,8 +50,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.12 }}
             className="mt-2 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
           >
-            Hi, I'm{" "}
-            <span className="text-gradient">{profile.name}</span>
+            Hi, I'm <span className="text-gradient">{profile.name}</span>
           </motion.h1>
 
           <motion.div
@@ -79,7 +90,7 @@ export default function Hero() {
             </Magnetic>
             <Magnetic>
               <a
-                href={profile.resumeUrl}
+                href={import.meta.env.BASE_URL + profile.resumeUrl}
                 download
                 data-cursor-hover
                 className="flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-mono text-sm text-white transition hover:border-primary hover:text-primary"
@@ -123,14 +134,28 @@ export default function Hero() {
               <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
             </div>
             <pre className="whitespace-pre-wrap text-muted">
-<span className="text-secondary">class</span> <span className="text-primary">Engineer</span> {'{'}
-{"\n  "}<span className="text-secondary">stack</span> = [<span className="text-accent">"Java"</span>, <span className="text-accent">"Vert.x"</span>, <span className="text-accent">"React"</span>];
-{"\n  "}<span className="text-secondary">domains</span> = [<span className="text-accent">"AI"</span>, <span className="text-accent">"Cloud"</span>, <span className="text-accent">"Mobile"</span>];
-{"\n\n  "}<span className="text-secondary">ship</span>() {'{'}
-{"\n    "}<span className="text-muted/60">// design → build → deploy</span>
-{"\n    "}<span className="text-secondary">return</span> <span className="text-accent">"production-ready"</span>;
-{"\n  "}{'}'}
-{"\n"}{'}'}
+              <span className="text-secondary">class</span>{" "}
+              <span className="text-primary">Engineer</span> {"{"}
+              {"\n  "}
+              <span className="text-secondary">stack</span> = [
+              <span className="text-accent">"Java"</span>,{" "}
+              <span className="text-accent">"Vert.x"</span>,{" "}
+              <span className="text-accent">"React"</span>];
+              {"\n  "}
+              <span className="text-secondary">domains</span> = [
+              <span className="text-accent">"AI"</span>,{" "}
+              <span className="text-accent">"Cloud"</span>,{" "}
+              <span className="text-accent">"Mobile"</span>];
+              {"\n\n  "}
+              <span className="text-secondary">ship</span>() {"{"}
+              {"\n    "}
+              <span className="text-muted/60">// design → build → deploy</span>
+              {"\n    "}
+              <span className="text-secondary">return</span>{" "}
+              <span className="text-accent">"production-ready"</span>;{"\n  "}
+              {"}"}
+              {"\n"}
+              {"}"}
             </pre>
             <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-secondary/20 blur-3xl" />
           </div>
