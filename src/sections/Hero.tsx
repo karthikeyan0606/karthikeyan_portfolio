@@ -21,15 +21,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center px-6 pt-24"
+      className="relative isolate flex min-h-[100svh] items-start overflow-hidden px-4 pb-8 pt-24 sm:items-center sm:px-6 sm:pb-0 sm:pt-24"
     >
-      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 font-mono text-xs text-muted"
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 font-mono text-xs text-muted sm:mb-6"
           >
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
             Available for new opportunities
@@ -48,7 +48,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.12 }}
-            className="mt-2 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+            className="mt-2 font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
           >
             Hi, I'm <span className="text-gradient">{profile.name}</span>
           </motion.h1>
@@ -57,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-4 flex h-9 items-center font-mono text-xl text-muted sm:text-2xl"
+            className="mt-2 flex h-9 items-center font-mono text-lg text-muted sm:mt-4 sm:text-2xl"
           >
             <span className="mr-2 text-white/40">&gt;</span>
             {role}
@@ -68,7 +68,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
+            className="mt-3 max-w-xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg"
           >
             {profile.tagline}
           </motion.p>
@@ -77,7 +77,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-5 flex flex-wrap gap-3 sm:mt-8 sm:gap-4"
           >
             <Magnetic>
               <a
@@ -113,7 +113,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-14 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs uppercase tracking-widest text-muted/70"
+            className="mt-8 hidden flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-widest text-muted/70 sm:flex sm:mt-14 sm:gap-x-6 sm:gap-y-3"
           >
             {TECH.map((t) => (
               <span key={t}>{t}</span>
@@ -170,7 +170,7 @@ export default function Hero() {
         aria-label="Scroll to about section"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 text-muted sm:block"
       >
         <FiArrowDown size={20} />
       </motion.a>

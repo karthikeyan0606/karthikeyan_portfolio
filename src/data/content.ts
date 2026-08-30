@@ -18,7 +18,7 @@ export const profile = {
 
 export const stats = [
   { label: "Projects Shipped", value: 5, suffix: "+" },
-  { label: "APIs Built", value: 30, suffix: "+" },
+  { label: "APIs Built", value: 300, suffix: "+" },
   { label: "Users Served", value: 100, suffix: "+" },
   { label: "Years Experience", value: 2, suffix: "+" },
 ];

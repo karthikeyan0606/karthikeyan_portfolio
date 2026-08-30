@@ -19,7 +19,7 @@ function polar(index: number, radius: number) {
 
 export default function AIShowcase() {
   return (
-    <section id="ai" className="relative px-6 py-28">
+    <section id="ai" className="relative px-4 py-16 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="font-mono text-sm text-primary">04 · AI Architecture</p>

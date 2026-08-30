@@ -30,7 +30,7 @@ const ICONS: Record<string, IconType> = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative px-6 py-28">
+    <section id="skills" className="relative px-4 py-16 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="font-mono text-sm text-primary">02 · Skills</p>
@@ -40,16 +40,18 @@ export default function Skills() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="relative mt-14 overflow-hidden rounded-3xl border border-border">
+          <div className="relative isolate mt-14 overflow-hidden rounded-3xl border border-border">
             <video
               autoPlay
               muted
               loop
               playsInline
+              preload="auto"
               className="absolute inset-0 -z-10 h-full w-full object-cover"
-              src={`${import.meta.env.BASE_URL}videos/tech-bg.mp4`}
-            />
-            <div className="absolute inset-0 -z-10 bg-bg/80" />
+            >
+              <source src={`${import.meta.env.BASE_URL}videos/tech-bg.mp4`} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 -z-10 bg-bg/70" />
 
             <div className="grid grid-cols-3 gap-3 p-6 sm:grid-cols-4 sm:gap-4 sm:p-8 md:grid-cols-6">
               {techStack.map((t) => {

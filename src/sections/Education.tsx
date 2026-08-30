@@ -3,7 +3,7 @@ import { education } from "../data/content";
 
 export default function Education() {
   return (
-    <section id="education" className="relative px-6 py-28">
+    <section id="education" className="relative px-4 py-16 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-4xl">
         <Reveal>
           <p className="font-mono text-sm text-primary">Education</p>
