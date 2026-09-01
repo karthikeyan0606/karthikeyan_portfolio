@@ -157,20 +157,6 @@ export const experience: ExperienceItem[] = [
     description:
       "Building Flutter apps and backend services end to end — from schema design to production release, including a RAG system shipped into a live product.",
     projects: ["Food Delivery Platform", "IP Rights management", "Medical", "Finance Applications "],
-  }, {
-    role: "Software Engineer",
-    org: "Swomb Technologies",
-    period: "2025 — Present",
-    description:
-      "Building Flutter apps and backend services end to end — from schema design to production release, including a RAG system shipped into a live product.",
-    projects: ["Food Delivery Platform", "IP Rights management", "Medical", "Finance Applications "],
-  }, {
-    role: "Software Engineer",
-    org: "Swomb Technologies",
-    period: "2025 — Present",
-    description:
-      "Building Flutter apps and backend services end to end — from schema design to production release, including a RAG system shipped into a live product.",
-    projects: ["Food Delivery Platform", "IP Rights management", "Medical", "Finance Applications "],
   },
 ];
 
