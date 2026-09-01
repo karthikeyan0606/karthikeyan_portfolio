@@ -82,9 +82,9 @@ export default function Cursor() {
           const radius = 5 * (1 - t) + 1;
 
           const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 3);
-          gradient.addColorStop(0, `rgba(0, 229, 255, ${alpha})`);
-          gradient.addColorStop(0.6, `rgba(124, 58, 237, ${alpha * 0.5})`);
-          gradient.addColorStop(1, "rgba(124, 58, 237, 0)");
+          gradient.addColorStop(0, `rgba(59, 130, 246, ${alpha})`);
+          gradient.addColorStop(0.6, `rgba(29, 78, 216, ${alpha * 0.5})`);
+          gradient.addColorStop(1, "rgba(29, 78, 216, 0)");
 
           ctx.beginPath();
           ctx.fillStyle = gradient;
@@ -112,12 +112,12 @@ export default function Cursor() {
 
   return (
     <>
-      <canvas ref={canvasRef} aria-hidden="true" className="pointer-events-none fixed inset-0 z-[99]" />
+      <canvas ref={canvasRef} aria-hidden="true" className="pointer-events-none fixed inset-0 z-[190]" />
 
       {/* precise inner dot */}
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-[width,height] duration-200 ease-out"
+        className="pointer-events-none fixed left-0 top-0 z-[191] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-[width,height] duration-200 ease-out"
         style={{
           width: hovering ? 6 : 7,
           height: hovering ? 6 : 7,
@@ -128,14 +128,14 @@ export default function Cursor() {
       {/* smooth trailing ring with soft glow */}
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2 rounded-full border transition-[width,height,border-color,background-color,box-shadow] duration-300 ease-out"
+        className="pointer-events-none fixed left-0 top-0 z-[191] -translate-x-1/2 -translate-y-1/2 rounded-full border transition-[width,height,border-color,background-color,box-shadow] duration-300 ease-out"
         style={{
           width: hovering ? 64 : 34,
           height: hovering ? 64 : 34,
-          borderColor: hovering ? "rgba(0,229,255,0.7)" : "rgba(255,255,255,0.35)",
-          backgroundColor: hovering ? "rgba(0,229,255,0.06)" : "transparent",
+          borderColor: hovering ? "rgba(59,130,246,0.7)" : "rgba(255,255,255,0.35)",
+          backgroundColor: hovering ? "rgba(59,130,246,0.06)" : "transparent",
           boxShadow: hovering
-            ? "0 0 28px rgba(0,229,255,0.35), inset 0 0 20px rgba(124,58,237,0.15)"
+            ? "0 0 28px rgba(59,130,246,0.35), inset 0 0 20px rgba(29,78,216,0.15)"
             : "0 0 12px rgba(255,255,255,0.08)",
         }}
       />

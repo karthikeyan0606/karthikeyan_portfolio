@@ -10,9 +10,9 @@ type Particle = {
 };
 
 const COLORS = {
-  primary: "0, 229, 255",
-  secondary: "124, 58, 237",
-  accent: "0, 255, 163",
+  primary: "59, 130, 246",
+  secondary: "29, 78, 216",
+  accent: "56, 189, 248",
 };
 
 export default function ParticleField() {

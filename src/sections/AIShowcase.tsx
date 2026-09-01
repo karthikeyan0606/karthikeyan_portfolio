@@ -1,13 +1,35 @@
 import { motion } from "framer-motion";
-import { FiCpu } from "react-icons/fi";
+import {
+  FiUser,
+  FiEdit3,
+  FiLayers,
+  FiDatabase,
+  FiSearch,
+  FiBox,
+  FiCheckCircle,
+  FiCpu,
+} from "react-icons/fi";
+import { SiGooglegemini } from "react-icons/si";
+import type { IconType } from "react-icons";
 import Reveal from "../components/Reveal";
 import { aiPipeline } from "../data/content";
 
+const STEP_ICONS: Record<string, IconType> = {
+  User: FiUser,
+  Prompt: FiEdit3,
+  "Embedding Model": FiLayers,
+  "Vector Database": FiDatabase,
+  Retriever: FiSearch,
+  "Context Builder": FiBox,
+  Gemini: SiGooglegemini,
+  Response: FiCheckCircle,
+};
+
 const CX = 50;
 const CY = 50;
-const NODE_RADIUS = 36; // percent
+const NODE_RADIUS = 38;
 const COUNT = aiPipeline.length;
-const CYCLE = 8; // seconds for one full data-flow loop
+const CYCLE = 8;
 
 function polar(index: number, radius: number) {
   const angle = (-90 + (360 / COUNT) * index) * (Math.PI / 180);
@@ -29,53 +51,17 @@ export default function AIShowcase() {
           <p className="mt-3 max-w-md text-sm text-muted">Every stage feeds the core in sequence.</p>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <div className="relative mx-auto mt-16 aspect-square w-full max-w-[560px]">
-            {/* decorative rotating orbit rings — atom aesthetic */}
+        {/* Desktop / tablet: orbit visualization */}
+        <Reveal delay={0.1} className="hidden sm:block">
+          <div className="relative mx-auto mt-16 aspect-square w-full max-w-[480px]">
             <motion.svg
               viewBox="0 0 100 100"
               className="absolute inset-0 h-full w-full"
               aria-hidden="true"
               animate={{ rotate: 360 }}
-              transition={{ duration: 46, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
             >
-              <ellipse cx={CX} cy={CY} rx={40} ry={16} fill="none" stroke="rgba(0,229,255,0.12)" strokeWidth={0.4} />
-            </motion.svg>
-            <motion.svg
-              viewBox="0 0 100 100"
-              className="absolute inset-0 h-full w-full"
-              aria-hidden="true"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            >
-              <ellipse
-                cx={CX}
-                cy={CY}
-                rx={40}
-                ry={16}
-                fill="none"
-                stroke="rgba(124,58,237,0.14)"
-                strokeWidth={0.4}
-                transform={`rotate(60 ${CX} ${CY})`}
-              />
-            </motion.svg>
-            <motion.svg
-              viewBox="0 0 100 100"
-              className="absolute inset-0 h-full w-full"
-              aria-hidden="true"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 75, repeat: Infinity, ease: "linear" }}
-            >
-              <ellipse
-                cx={CX}
-                cy={CY}
-                rx={40}
-                ry={16}
-                fill="none"
-                stroke="rgba(0,255,163,0.1)"
-                strokeWidth={0.4}
-                transform={`rotate(120 ${CX} ${CY})`}
-              />
+              <circle cx={CX} cy={CY} r={NODE_RADIUS} fill="none" stroke="rgba(59,130,246,0.16)" strokeWidth={0.4} strokeDasharray="1 3" />
             </motion.svg>
 
             {/* spokes + traveling data particles */}
@@ -89,7 +75,7 @@ export default function AIShowcase() {
                     y1={p.y}
                     x2={CX}
                     y2={CY}
-                    stroke="rgba(255,255,255,0.08)"
+                    stroke="rgba(148,163,184,0.12)"
                     strokeWidth={0.4}
                     vectorEffect="non-scaling-stroke"
                   />
@@ -103,8 +89,8 @@ export default function AIShowcase() {
                   <motion.circle
                     key={i}
                     r={1.4}
-                    fill="#00ffa3"
-                    style={{ filter: "drop-shadow(0 0 3px #00ffa3)" }}
+                    fill="#38bdf8"
+                    style={{ filter: "drop-shadow(0 0 3px #38bdf8)" }}
                     initial={{ opacity: 0 }}
                     animate={{
                       cx: [p.x, CX],
@@ -122,15 +108,14 @@ export default function AIShowcase() {
                 );
               })}
 
-              {/* core sonar pulses */}
-              {[0, 1.3, 2.6].map((delay, i) => (
+              {[0, 1.7].map((delay, i) => (
                 <motion.circle
                   key={i}
                   cx={CX}
                   cy={CY}
                   r={7}
                   fill="none"
-                  stroke="rgba(0,229,255,0.5)"
+                  stroke="rgba(59,130,246,0.5)"
                   strokeWidth={0.5}
                   initial={{ opacity: 0.6 }}
                   animate={{ r: [7, 20], opacity: [0.5, 0] }}
@@ -138,20 +123,17 @@ export default function AIShowcase() {
                 />
               ))}
 
-              <circle cx={CX} cy={CY} r={7} fill="#050505" stroke="rgba(0,229,255,0.5)" strokeWidth={0.5} />
+              <circle cx={CX} cy={CY} r={7} fill="#03050d" stroke="rgba(59,130,246,0.5)" strokeWidth={0.5} />
             </svg>
 
             {/* AI core icon */}
             <motion.div
               className="glass absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-primary sm:h-20 sm:w-20"
               style={{ left: `${CX}%`, top: `${CY}%` }}
-              animate={{ boxShadow: ["0 0 10px rgba(0,229,255,0.2)", "0 0 32px rgba(0,229,255,0.5)", "0 0 10px rgba(0,229,255,0.2)"] }}
+              animate={{ boxShadow: ["0 0 10px rgba(59,130,246,0.2)", "0 0 32px rgba(59,130,246,0.5)", "0 0 10px rgba(59,130,246,0.2)"] }}
               transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              >
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 14, repeat: Infinity, ease: "linear" }}>
                 <FiCpu size={26} />
               </motion.div>
             </motion.div>
@@ -159,6 +141,7 @@ export default function AIShowcase() {
             {/* orbiting nodes */}
             {aiPipeline.map((node, i) => {
               const p = polar(i, NODE_RADIUS);
+              const Icon = STEP_ICONS[node.step] ?? FiBox;
               return (
                 <div
                   key={node.step}
@@ -167,20 +150,20 @@ export default function AIShowcase() {
                   style={{ left: `${p.x}%`, top: `${p.y}%` }}
                 >
                   <motion.div
-                    className="glass flex h-11 w-11 items-center justify-center rounded-full border border-white/10 font-mono text-xs text-primary sm:h-12 sm:w-12"
-                    whileHover={{ scale: 1.18, borderColor: "rgba(0,229,255,0.6)" }}
+                    className="glass flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-primary sm:h-12 sm:w-12"
+                    whileHover={{ scale: 1.18, borderColor: "rgba(59,130,246,0.6)" }}
                     animate={{
                       boxShadow: [
-                        "0 0 0px rgba(0,229,255,0)",
-                        "0 0 16px rgba(0,229,255,0.4)",
-                        "0 0 0px rgba(0,229,255,0)",
+                        "0 0 0px rgba(59,130,246,0)",
+                        "0 0 16px rgba(59,130,246,0.4)",
+                        "0 0 0px rgba(59,130,246,0)",
                       ],
                     }}
                     transition={{ duration: CYCLE, repeat: Infinity, delay: (i / COUNT) * CYCLE, ease: "easeInOut" }}
                   >
-                    {String(i + 1).padStart(2, "0")}
+                    <Icon size={16} />
                   </motion.div>
-                  <span className="mt-2 whitespace-nowrap font-display text-[11px] font-semibold text-white sm:text-xs">
+                  <span className="mt-2 whitespace-nowrap font-mono text-[10px] font-semibold text-white sm:text-[11px]">
                     {node.step}
                   </span>
                 </div>
@@ -189,7 +172,27 @@ export default function AIShowcase() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        {/* Mobile: vertical flow, guaranteed to fit any screen width */}
+        <Reveal delay={0.1} className="sm:hidden">
+          <div className="relative mt-10 space-y-5 border-l border-border pl-6">
+            {aiPipeline.map((node) => {
+              const Icon = STEP_ICONS[node.step] ?? FiBox;
+              return (
+                <div key={node.step} className="relative flex items-start gap-3">
+                  <span className="glass absolute -left-[calc(1.5rem+11px)] flex h-6 w-6 items-center justify-center rounded-full border border-primary/40 text-primary">
+                    <Icon size={12} />
+                  </span>
+                  <div>
+                    <p className="font-display text-sm font-semibold text-white">{node.step}</p>
+                    <p className="mt-0.5 text-xs leading-relaxed text-muted">{node.detail}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.2} className="hidden sm:block">
           <div className="mx-auto mt-16 grid max-w-3xl gap-x-10 gap-y-3 sm:grid-cols-2">
             {aiPipeline.map((node, i) => (
               <div key={node.step} className="flex items-start gap-3">

@@ -7,8 +7,11 @@ import {
   SiExpress,
   SiReact,
   SiTypescript,
+  SiCplusplus,
+  SiKong,
 } from "react-icons/si";
 import { FiZap, FiSearch, FiGrid, FiTerminal } from "react-icons/fi";
+import { TbVideo, TbBrandAdobePhotoshop, TbBrandAdobeIllustrator } from "react-icons/tb";
 import type { IconType } from "react-icons";
 import Reveal from "../components/Reveal";
 import { skillCategories, techStack } from "../data/content";
@@ -22,10 +25,15 @@ const ICONS: Record<string, IconType> = {
   SiExpress,
   SiReact,
   SiTypescript,
+  SiCplusplus,
+  SiKong,
   FiZap,
   FiSearch,
   FiGrid,
   FiTerminal,
+  TbVideo,
+  TbBrandAdobePhotoshop,
+  TbBrandAdobeIllustrator,
 };
 
 export default function Skills() {
@@ -74,7 +82,7 @@ export default function Skills() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {skillCategories.map((cat) => (
             <div
               key={cat.title}

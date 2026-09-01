@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate flex min-h-[100svh] items-start overflow-hidden px-4 pb-8 pt-24 sm:items-center sm:px-6 sm:pb-0 sm:pt-24"
+      className="relative isolate flex items-start overflow-hidden px-4 pb-10 pt-24 sm:min-h-[100svh] sm:items-center sm:px-6 sm:pb-0 sm:pt-24"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
         <div>

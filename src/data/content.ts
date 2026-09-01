@@ -16,6 +16,13 @@ export const profile = {
   resumeUrl: "/resume.pdf",
 };
 
+export const freelance = {
+  badge: "Open to Freelance Work",
+  headline: "Also taking on freelance & contract projects.",
+  detail:
+    "Flexible engagements for startups and small teams — quality-first delivery at budget-friendly rates.",
+};
+
 export const stats = [
   { label: "Projects Shipped", value: 5, suffix: "+" },
   { label: "APIs Built", value: 300, suffix: "+" },
@@ -27,7 +34,7 @@ export const aboutStats = [
   { label: "Mobile Development", detail: "Flutter apps shipped to production, including a live UK marketplace" },
   { label: "Backend Engineering", detail: "Java/Vert.x services and Node.js APIs backed by PostgreSQL" },
   { label: "AI Systems", detail: "Built a working RAG pipeline into a production app" },
-  { label: "Continuous Learning", detail: "Currently deepening Express.js, React, and TypeScript" },
+  { label: "Design & Creative", detail: "Photoshop, Illustrator, and AI video generation for product visuals" },
 ];
 
 export type SkillCategory = {
@@ -36,9 +43,10 @@ export type SkillCategory = {
 };
 
 export const skillCategories: SkillCategory[] = [
-  { title: "Core Stack", skills: ["Flutter", "Dart", "Java", "Vert.x", "Node.js", "PostgreSQL"] },
-  { title: "AI / RAG", skills: ["Retrieval-Augmented Generation", "Vector Search", "Prompt Engineering"] },
-  { title: "Currently Learning", skills: ["Express.js", "React", "TypeScript"] },
+  { title: "Core Stack", skills: ["Flutter", "Dart", "Java", "Vert.x", "Node.js", "PostgreSQL", "C++", "Kong Gateway"] },
+  { title: "Web", skills: ["Express.js", "React", "TypeScript"] },
+  { title: "AI / RAG", skills: ["Retrieval-Augmented Generation", "Vector Search", "Prompt Engineering", "AI Video Generation"] },
+  { title: "Design", skills: ["Photoshop", "Illustrator"] },
 ];
 
 export const techStack = [
@@ -48,12 +56,17 @@ export const techStack = [
   { name: "Vert.x", icon: "FiZap", iconSet: "fi" },
   { name: "Node.js", icon: "SiNodedotjs", iconSet: "si" },
   { name: "PostgreSQL", icon: "SiPostgresql", iconSet: "si" },
+  { name: "C++", icon: "SiCplusplus", iconSet: "si" },
+  { name: "Kong Gateway", icon: "SiKong", iconSet: "si" },
   { name: "RAG", icon: "FiSearch", iconSet: "fi" },
   { name: "Vector Search", icon: "FiGrid", iconSet: "fi" },
   { name: "Prompt Engineering", icon: "FiTerminal", iconSet: "fi" },
+  { name: "AI Video Generation", icon: "TbVideo", iconSet: "tb" },
   { name: "Express.js", icon: "SiExpress", iconSet: "si" },
   { name: "React", icon: "SiReact", iconSet: "si" },
   { name: "TypeScript", icon: "SiTypescript", iconSet: "si" },
+  { name: "Photoshop", icon: "TbBrandAdobePhotoshop", iconSet: "tb" },
+  { name: "Illustrator", icon: "TbBrandAdobeIllustrator", iconSet: "tb" },
 ];
 
 export type Project = {
@@ -180,5 +193,6 @@ export const services = [
   { title: "Backend API Development", detail: "Java & Vert.x services and Node.js APIs built for correctness and scale." },
   { title: "Database Design", detail: "PostgreSQL schemas that hold up under real production load." },
   { title: "AI / RAG Integration", detail: "Retrieval-augmented generation grounded in your own data." },
-  { title: "Full-Stack Web Development", detail: "Building toward React, TypeScript, and Express.js as I deepen the web stack." },
+  { title: "Full-Stack Web Development", detail: "React, TypeScript, and Express.js for modern web applications." },
+  { title: "Freelance Projects", detail: "Flexible, budget-friendly engagements for startups and small teams." },
 ];

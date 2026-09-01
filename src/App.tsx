@@ -16,7 +16,7 @@ import Contact from "./sections/Contact";
 
 export default function App() {
   return (
-    <div className="cursor-none-desktop relative min-h-screen">
+    <div className="cursor-none-desktop relative min-h-screen overflow-x-hidden">
       <Loader />
       <Cursor />
       <ParticleField />

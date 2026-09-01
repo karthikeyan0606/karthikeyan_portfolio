@@ -35,7 +35,7 @@ export default function TiltCard({ children, className }: { children: ReactNode;
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
-          background: `radial-gradient(220px circle at ${glowX} ${glowY}, rgba(0,229,255,0.12), transparent 70%)`,
+          background: `radial-gradient(220px circle at ${glowX} ${glowY}, rgba(59,130,246,0.14), transparent 70%)`,
         }}
       />
       {children}
