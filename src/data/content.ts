@@ -87,7 +87,7 @@ export const projects: Project[] = [
     summary: "Home-cooked food delivery marketplace, live in the UK.",
     description:
       "A three-sided marketplace connecting home cooks, customers, and delivery partners for home-cooked meal delivery — three separate apps (Customer, Cook, Delivery Partner), currently live in the UK.",
-    tags: ["Flutter", "Node.js", "PostgreSQL", "RAG"],
+    tags: ["Flutter", "Java","Vert.x", "PostgreSQL", "RAG"],
     highlights: [
       "Three dedicated apps: Customer, Cook, and Delivery Partner",
       "Built a RAG system into the Cook app",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     summary: "Wallet, cards, and payments — mobile-first.",
     description:
       "A fintech mobile application covering digital wallets, card management, QR payments, and transaction history with a secure API backend.",
-    tags: ["Flutter", "Payments", "QR", "Wallet"],
+    tags: ["Flutter", "Payments", "QR", "Wallet","Java"],
     highlights: ["Digital wallet and card management", "QR-based payments", "Transaction history and receipts"],
   },
   {
@@ -151,6 +151,20 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
+    role: "Software Engineer",
+    org: "Swomb Technologies",
+    period: "2025 — Present",
+    description:
+      "Building Flutter apps and backend services end to end — from schema design to production release, including a RAG system shipped into a live product.",
+    projects: ["Food Delivery Platform", "IP Rights management", "Medical", "Finance Applications "],
+  }, {
+    role: "Software Engineer",
+    org: "Swomb Technologies",
+    period: "2025 — Present",
+    description:
+      "Building Flutter apps and backend services end to end — from schema design to production release, including a RAG system shipped into a live product.",
+    projects: ["Food Delivery Platform", "IP Rights management", "Medical", "Finance Applications "],
+  }, {
     role: "Software Engineer",
     org: "Swomb Technologies",
     period: "2025 — Present",
