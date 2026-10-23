@@ -9,9 +9,23 @@ import {
   SiTypescript,
   SiCplusplus,
   SiKong,
+  SiClaude,
+  SiGit,
+  SiGithub,
+  SiUbuntu,
+  SiPostman,
+  SiFigma,
 } from "react-icons/si";
 import { FiZap, FiSearch, FiGrid, FiTerminal } from "react-icons/fi";
-import { TbVideo, TbBrandAdobePhotoshop, TbBrandAdobeIllustrator } from "react-icons/tb";
+import {
+  TbVideo,
+  TbBrandAdobePhotoshop,
+  TbBrandAdobeIllustrator,
+  TbBrandAws,
+  TbBrandAzure,
+  TbBrandOffice,
+  TbBrandOpenai,
+} from "react-icons/tb";
 import type { IconType } from "react-icons";
 import Reveal from "../components/Reveal";
 import { skillCategories, techStack } from "../data/content";
@@ -27,6 +41,12 @@ const ICONS: Record<string, IconType> = {
   SiTypescript,
   SiCplusplus,
   SiKong,
+  SiClaude,
+  SiGit,
+  SiGithub,
+  SiUbuntu,
+  SiPostman,
+  SiFigma,
   FiZap,
   FiSearch,
   FiGrid,
@@ -34,6 +54,10 @@ const ICONS: Record<string, IconType> = {
   TbVideo,
   TbBrandAdobePhotoshop,
   TbBrandAdobeIllustrator,
+  TbBrandAws,
+  TbBrandAzure,
+  TbBrandOffice,
+  TbBrandOpenai,
 };
 
 export default function Skills() {
@@ -57,22 +81,26 @@ export default function Skills() {
               preload="auto"
               className="absolute inset-0 -z-10 h-full w-full object-cover"
             >
-              <source src={`${import.meta.env.BASE_URL}videos/tech-bg.mp4`} type="video/mp4" />
+              <source
+                src={`${import.meta.env.BASE_URL}videos/tech-bg.mp4`}
+                type="video/mp4"
+              />
             </video>
             <div className="absolute inset-0 -z-10 bg-bg/70" />
+            <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/3 rounded-full bg-primary/25 blur-[100px]" />
 
-            <div className="grid grid-cols-3 gap-3 p-6 sm:grid-cols-4 sm:gap-4 sm:p-8 md:grid-cols-6">
+            <div className="flex flex-wrap justify-center gap-3 p-6 sm:gap-4 sm:p-8">
               {techStack.map((t) => {
                 const Icon = ICONS[t.icon];
                 return (
                   <div
                     key={t.name}
-                    className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/[0.06]"
+                    className="group flex w-[92px] flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-4 text-center transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/[0.06] hover:shadow-[0_0_24px_-6px_rgba(59,130,246,0.55)] sm:w-24"
                   >
                     {Icon && (
-                      <Icon className="h-8 w-8 text-white/40 grayscale transition duration-300 group-hover:text-primary group-hover:grayscale-0" />
+                      <Icon className="h-7 w-7 text-white/40 grayscale transition duration-300 group-hover:text-primary group-hover:grayscale-0" />
                     )}
-                    <span className="font-mono text-[11px] text-muted transition group-hover:text-white">
+                    <span className="font-mono text-[10px] leading-tight text-muted transition group-hover:text-white">
                       {t.name}
                     </span>
                   </div>

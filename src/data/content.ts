@@ -43,10 +43,10 @@ export type SkillCategory = {
 };
 
 export const skillCategories: SkillCategory[] = [
-  { title: "Core Stack", skills: ["Flutter", "Dart", "Java", "Vert.x", "Node.js", "PostgreSQL", "C++", "Kong Gateway"] },
+  { title: "Core Stack", skills: ["Flutter", "Dart", "Java", "Vert.x", "Spring Boot", "Node.js", "PostgreSQL"] },
   { title: "Web", skills: ["Express.js", "React", "TypeScript"] },
-  { title: "AI / RAG", skills: ["Retrieval-Augmented Generation", "Vector Search", "Prompt Engineering", "AI Video Generation"] },
-  { title: "Design", skills: ["Photoshop", "Illustrator"] },
+  { title: "AI / RAG", skills: ["Retrieval-Augmented Generation", "Vector Search", "Prompt Engineering", "AI Video Generation", "Claude", "ChatGPT"] },
+  { title: "Tools & Platforms", skills: ["Git", "GitHub", "Ubuntu", "AWS", "Azure", "Postman", "Figma", "MS Office", "Photoshop", "Illustrator"] },
 ];
 
 export const techStack = [
@@ -67,6 +67,16 @@ export const techStack = [
   { name: "TypeScript", icon: "SiTypescript", iconSet: "si" },
   { name: "Photoshop", icon: "TbBrandAdobePhotoshop", iconSet: "tb" },
   { name: "Illustrator", icon: "TbBrandAdobeIllustrator", iconSet: "tb" },
+  { name: "Claude", icon: "SiClaude", iconSet: "si" },
+  { name: "ChatGPT", icon: "TbBrandOpenai", iconSet: "tb" },
+  { name: "Git", icon: "SiGit", iconSet: "si" },
+  { name: "GitHub", icon: "SiGithub", iconSet: "si" },
+  { name: "Ubuntu", icon: "SiUbuntu", iconSet: "si" },
+  { name: "AWS", icon: "TbBrandAws", iconSet: "tb" },
+  { name: "Azure", icon: "TbBrandAzure", iconSet: "tb" },
+  { name: "Postman", icon: "SiPostman", iconSet: "si" },
+  { name: "Figma", icon: "SiFigma", iconSet: "si" },
+  { name: "MS Office", icon: "TbBrandOffice", iconSet: "tb" },
 ];
 
 export type Project = {
@@ -78,6 +88,7 @@ export type Project = {
   highlights: string[];
   github?: string;
   demo?: string;
+  link?: string
 };
 
 export const projects: Project[] = [
@@ -87,13 +98,29 @@ export const projects: Project[] = [
     summary: "Home-cooked food delivery marketplace, live in the UK.",
     description:
       "A three-sided marketplace connecting home cooks, customers, and delivery partners for home-cooked meal delivery — three separate apps (Customer, Cook, Delivery Partner), currently live in the UK.",
-    tags: ["Flutter", "Java","Vert.x", "PostgreSQL", "RAG"],
+    tags: ["Flutter", "Node.js", "PostgreSQL", "RAG"],
     highlights: [
       "Three dedicated apps: Customer, Cook, and Delivery Partner",
       "Built a RAG system into the Cook app",
       "Live in production in the UK market",
     ],
+
   },
+
+  {
+    id: "api-gateway",
+    name: "Kong-Style API Gateway",
+    summary: "A Kong-style gateway that fronts backend services.",
+    description:
+      "An API gateway modelled on Kong, sitting in front of backend services to route and manage client requests through a single entry point.",
+    tags: ["API Gateway", "REST APIs", "Backend"],
+    highlights: [
+      "Single entry point for client requests",
+      "Request routing to backend services",
+    ],
+  },
+
+
   {
     id: "ip-climb",
     name: "IP Climb",
@@ -112,7 +139,7 @@ export const projects: Project[] = [
     summary: "Wallet, cards, and payments — mobile-first.",
     description:
       "A fintech mobile application covering digital wallets, card management, QR payments, and transaction history with a secure API backend.",
-    tags: ["Flutter", "Payments", "QR", "Wallet","Java"],
+    tags: ["Flutter", "Payments", "QR", "Wallet"],
     highlights: ["Digital wallet and card management", "QR-based payments", "Transaction history and receipts"],
   },
   {
