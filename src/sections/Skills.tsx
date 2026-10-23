@@ -8,6 +8,8 @@ import {
   SiReact,
   SiTypescript,
   SiCplusplus,
+  SiSpringboot,        // add
+  SiEclipsevertdotx,   // add (optional, for Vert.x)
   SiKong,
   SiClaude,
   SiGit,
@@ -58,6 +60,8 @@ const ICONS: Record<string, IconType> = {
   TbBrandAzure,
   TbBrandOffice,
   TbBrandOpenai,
+  SiSpringboot,        // add
+  SiEclipsevertdotx,   // add (optional)
 };
 
 export default function Skills() {
